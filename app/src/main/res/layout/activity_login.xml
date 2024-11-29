@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Login">
+
+    <!-- GUIDE LINES -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/loginGLH1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/loginGLV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/loginGLV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85"/>
+
+    <!-- LOGO -->
+
+    <ImageView
+        android:id="@+id/loginLogo"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:src="@mipmap/medusa_icon_foreground"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <!-- nombre app -->
+
+    <TextView
+        android:id="@+id/loginAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginLogo"
+        android:layout_marginTop="10dp" />
+
+
+    <!-- campo usuario -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginUsernameTIL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        app:layout_constraintStart_toStartOf="@id/loginGLV1"
+        app:layout_constraintEnd_toEndOf="@id/loginGLV2"
+        app:layout_constraintTop_toBottomOf="@id/loginAppName"
+        app:startIconDrawable="@drawable/user">
+
+
+        <EditText
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Usuario"
+            android:inputType="textPersonName"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- campo contra-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/loginPasswordTIL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/loginGLV2"
+        app:layout_constraintStart_toStartOf="@id/loginGLV1"
+        app:layout_constraintTop_toBottomOf="@id/loginUsernameTIL"
+        app:startIconDrawable="@drawable/password">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- boton -->
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/login_btn"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginPasswordTIL" />
+
+    <TextView
+        android:id="@+id/loginRegisterText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="¿Todavía no estás registrado?"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/loginGLV2"
+        app:layout_constraintStart_toStartOf="@id/loginGLV1"
+        app:layout_constraintTop_toBottomOf="@id/loginButton" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
